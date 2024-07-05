@@ -1,0 +1,70 @@
+print('')
+print('#1')
+import re
+
+def match_ab(string):
+    pattern = r'ab*'
+    if re.fullmatch(pattern, string):
+        return True
+    else:
+        return False
+
+print(match_ab("ab"))  
+print(match_ab("a"))  
+print(match_ab("b"))  
+print(match_ab("aaabbb")) 
+
+
+print('')
+print('#2')
+def match_ab2(string):
+    pattern = r'ab{2,3}'
+    if re.fullmatch(pattern, string):
+        return True
+    else:
+        return False
+
+print(match_ab("abb"))  
+print(match_ab("abbb"))  
+print(match_ab("bb"))  
+print(match_ab("aaabbb")) 
+
+
+print('')
+print('#3')
+def lowercase(string):
+    pattern = r'[a-z]+_[a-z]+'
+    return re.findall(pattern, string)
+
+print(lowercase("aab_cbbbc abc_defghijk fhhilhf lmno_pqr_stu"))
+
+
+print('')
+print('#4')
+def find_upper_lower(string):
+    pattern = r'[A-Z][a-z]+'
+    return re.findall(pattern, string)
+
+print(find_upper_lower("Hello World this is a Test String"))
+
+
+print('')
+print('#5')
+def match_a_any_b(string):
+    pattern = r'a.*b'
+    if re.fullmatch(pattern, string):
+        return True
+    else:
+        return False
+
+print(match_a_any_b("aXYZb"))  
+print(match_a_any_b("a123b"))  
+print(match_a_any_b("ab"))     
+print(match_a_any_b("a123"))
+
+
+print('')
+print('#6')
+def replace_with_colon(string):
+    pattern = r'[ ,.]'
+    return re.sub(pattern, ':', string)
