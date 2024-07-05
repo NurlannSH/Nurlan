@@ -1,0 +1,54 @@
+print('#1')
+def squares_up_to_n(n):
+    for i in range(n+1):
+        yield i**2
+n = 5
+for square in squares_up_to_n(n):
+    print(square, end=" ")
+
+print('')
+print('#2')
+def even_numbers(n):
+    for i in range(n + 1):
+        if i % 2 == 0:
+            yield i
+
+n = 10
+even_nums = list(even_numbers(n))
+print(", ".join(map(str, even_nums)))
+
+
+print('')
+print('#3')
+def divisible_by_3_and_4(n):
+    for i in range(n + 1):
+        if i % 3 == 0 and i % 4 == 0:
+            yield i
+
+n = 24
+for num in divisible_by_3_and_4(n):
+    print(num, end=" ")
+
+
+print('')
+print('#4')
+def squares(a, b):
+    for i in range(a, b + 1):
+        yield i**2
+
+a = 3
+b = 7
+for square in squares(a, b):
+    print(square)
+
+
+print('')
+print('#5')
+def countdown(n):
+    while n >= 0:
+        yield n
+        n -= 1
+
+n = 5
+for num in countdown(n):
+    print(num, end=" ")
